@@ -9,10 +9,9 @@
 body {
   background-color: rgba(0, 0, 0, 0.911);
 }
-@media (max-width:1550px){
-  
+
 .detail-container {
-  padding: 10px 30px;
+  padding: 10px 5%;
   background-color: rgba(0, 0, 0, 0.911);
   color: white;
   padding-block: 10px;
@@ -449,7 +448,6 @@ form h2 {
 
 form h2:hover {
   background-color: rgba(255, 0, 0, 0.671);
-}
 }
 
 
