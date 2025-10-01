@@ -1,0 +1,217 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 5%;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0px 15px; */
+  background-color: rgba(0, 0, 0, 0.911);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.432);
+  padding-bottom: 10px;
+  color: white;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: red;
+}
+
+.search-bar {
+  padding-right: 20px;
+}
+
+.search-bar input {
+  padding: 3px;
+  /* width: 90%; */
+  font-size: 10px;
+  border: none;
+  border-radius: 2px;
+  color: rgba(227, 210, 210, 0.914);
+  background-color: #2a2a2a;
+}
+
+.search-bar input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.5px rgba(255, 0, 0, 0.432);
+}
+
+.search-bar button {
+  padding: 2.5px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 2px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: darkred;
+}
+
+
+/* Slider */
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  margin: 20px 0;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.imgb {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.imgb:hover {
+  transform: scale(1.02);
+}
+
+.imgb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fill-color-slider-img-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0) 100%);
+  z-index: 0;
+}
+
+.slider-movie-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+.slider-movie-info h2,
+.slider-movie-info p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  background-color: transparent;
+}
+
+/* Trending Movies Section */
+.showmovies-container {
+  margin-top: 40px;
+}
+
+.showmovies-container h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 20px;
+  color: red;
+}
+
+/* Movie Grid */
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.movie {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.movie:hover {
+  transform: scale(1.03);
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  border-radius: 10px;
+  opacity: 0.9;
+  object-fit: cover;
+}
+
+.fill-color-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0) 100%);
+  z-index: 0;
+}
+
+.movie-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+.movie-title {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  margin-bottom: 5px;
+}
+
+.movie-rating {
+  font-size: clamp(0.7rem, 1vw, 0.9rem);
+}
+
+/* Responsive Tweaks */
+@media (max-width:360px){
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    font-size: 0.9rem;
+  }
+}
